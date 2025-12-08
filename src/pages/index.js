@@ -137,11 +137,15 @@ export default function Home() {
             href="https://astryx.ca"
           />
           <ProjectCard
-            title="SeniorCare Connect"
-            tagline="React Native + Web for families and caregivers"
-            bullets={["Multi‑role system", "Stripe billing", "Automations and check‑ins"]}
-            tech={["React Native", "Next.js", "Stripe"]}
-            href="#seniorcare"
+            title="Flowwright AI Browser Automation Assistant"
+            tagline="Natural‑language browser automation using AI + Playwright"
+            bullets={[
+              "AI interprets instructions and generates an execution plan",
+              "Automates navigation, clicks, waits, and extraction with Playwright",
+              "Next.js APIs with orchestration and result logs; demo runs plan generation",
+            ]}
+            tech={["Next.js", "Node", "TypeScript", "Playwright", "LLM"]}
+            href="https://mp-ai-auto-browser.vercel.app/"
           />
           <ProjectCard
             title="100PlusTools.com"
