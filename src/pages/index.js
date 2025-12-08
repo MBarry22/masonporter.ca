@@ -1,78 +1,248 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Layout from "@/components/Layout";
+import Hero from "@/components/Hero";
+import Section from "@/components/Section";
+import { BentoGrid, BentoCard } from "@/components/BentoGrid";
+import ProjectCard from "@/components/ProjectCard";
+import Timeline from "@/components/Timeline";
+import ContactForm from "@/components/ContactForm";
+import Socials from "@/components/Socials";
+import MobileContactDock from "@/components/MobileContactDock";
 
 export default function Home() {
+  const timeline = [
+    {
+      title: "Founder at MP Developments",
+      period: "2024 to Present",
+      points: [
+        "ASTRYX: ITSM platform with tickets, custom forms, assets, roles, and team workflows.",
+        "Stripe subscriptions, Auth0 login, multi tenant MySQL, automated inbound and outbound email.",
+        "100PlusTools: SEO multi tool SaaS with usage limits, billing, email sending, and admin analytics.",
+      ],
+    },
+    {
+      title: "Technology Specialist and Lead Developer at Island Westcoast Developments LTD",
+      period: "2022 to Present",
+      points: [
+        "Built internal Construction Management System used by 125+ employees; supports $100M+ annual project volume.",
+        "Modules: change orders, subcontractor management, estimates, and approvals. Result: reduced processing from hours to minutes.",
+        "Internal apps: email automation, financial calculations, reporting, leadership dashboards.",
+        "Managed identity, authentication, cloud services, integrations, and infrastructure across two offices.",
+      ],
+    },
+    {
+      title: "Community Management and Software Developer at Wealth Empire",
+      period: "Apr 2023 to May 2024",
+      points: [
+        "Community operations and support across channels.",
+        "Delivered small tools/integrations to streamline workflows.",
+        "Supported a 17,000 member community (as of 2025).",
+      ],
+    },
+    {
+      title: "Developer and Administration at Arctic Gaming Network",
+      period: "Mar 2019 to Jan 2024 (Administration through Oct 2023)",
+      points: [
+        "Built and maintained community tooling and automation.",
+        "Integrated bots and services; supported events and moderation workflows.",
+        "Served a user base of 500k+ players over the network’s lifespan.",
+        "Led operations for community servers and staff coordination; policy and partner/vendor liaison.",
+      ],
+    },
+    {
+      title: "Software Developer at Flavrite",
+      period: "2022",
+      points: [
+        "Migrated mobile app from React Native CLI to Expo.",
+        "Improved camera system and image search functions.",
+      ],
+    },
+  ];
+
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black`}
-    >
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the index.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <Layout>
+      <Hero />
+
+      <Section id="about" title="About Me" eyebrow="Introduction">
+        <div className="prose max-w-none">
+          <p>
+            I am Mason Barry, also known as Mason Porter. I am a full stack
+            developer and IT systems specialist based in Nanaimo, BC. I designed
+            and built the Construction Management System used across a one
+            hundred million dollar construction company, and I have launched two
+            software platforms of my own. I work with Next.js, Node.js,
+            TypeScript, MySQL, and authentication and billing systems such as
+            Auth0 and Stripe. I focus on shipping clean, reliable systems that
+            help teams move faster and operate more efficiently.
           </p>
+          <ul>
+            <li>Technology Specialist and Lead Developer at Island Westcoast Developments (2022 to Present)</li>
+            <li>Creator of ASTRYX (ITSM) and 100PlusTools (multi tool SaaS)</li>
+            <li>Hands on with identity, cloud services, integrations, and infrastructure</li>
+            <li>More than four years building production systems at enterprise scale</li>
+          </ul>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </Section>
+
+      <Section id="skills" title="Skills" eyebrow="Capabilities">
+        <BentoGrid>
+          <BentoCard className="lg:col-span-3">
+            <h3 className="font-semibold">Core Development</h3>
+            <p className="mt-2 text-sm text-neutral-700">Next.js, React, Node.js, Express, TypeScript, Tailwind, REST, SQL</p>
+          </BentoCard>
+          <BentoCard className="lg:col-span-3">
+            <h3 className="font-semibold">Backend & Infrastructure</h3>
+            <p className="mt-2 text-sm text-neutral-700">MySQL, AWS, Azure, Vercel, Docker, CI/CD, Auth0, Stripe</p>
+          </BentoCard>
+          <BentoCard className="lg:col-span-2">
+            <h3 className="font-semibold">Architecture & Systems</h3>
+            <p className="mt-2 text-sm text-neutral-700">
+              IT management, networking, MDM, automations, workflow design
+            </p>
+          </BentoCard>
+          <BentoCard className="lg:col-span-2">
+            <h3 className="font-semibold">SaaS Engineering</h3>
+            <p className="mt-2 text-sm text-neutral-700">
+              RBAC, billing, form builders, dashboards, automation engines
+            </p>
+          </BentoCard>
+          <BentoCard className="lg:col-span-2">
+            <h3 className="font-semibold">Tooling</h3>
+            <p className="mt-2 text-sm text-neutral-700">Git, SendGrid, GitHub, Docker, PostgreSQL basics, Python, PowerShell, Bash</p>
+          </BentoCard>
+        </BentoGrid>
+      </Section>
+
+      <Section id="projects" title="Featured Projects" eyebrow="Work">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <ProjectCard
+            title="IWCD Construction Management System"
+            tagline="Custom enterprise platform — roles, SCOs, estimating, Procore"
+            bullets={[
+              "Replaced $200k+ software need",
+              "~100k+ LOC across multiple modules",
+              "Azure AD SSO, RBAC",
+            ]}
+            tech={["Next.js", "Node", "MySQL", "Azure AD", "Procore"]}
+            href="https://iwcdcoms.ca"
+          />
+          <ProjectCard
+            title="ASTRYX (ITSM & Asset Management)"
+            tagline="Multi‑tenant SaaS with dynamic forms and ML routing"
+            bullets={[
+              "RBAC, Teams, Subscriptions",
+              "Stripe billing portal",
+              "Inventory + asset assignment",
+            ]}
+            tech={["Next.js", "Node", "Postgres", "Stripe", "Auth0"]}
+            href="https://astryx.ca"
+          />
+          <ProjectCard
+            title="SeniorCare Connect"
+            tagline="React Native + Web for families and caregivers"
+            bullets={["Multi‑role system", "Stripe billing", "Automations and check‑ins"]}
+            tech={["React Native", "Next.js", "Stripe"]}
+            href="#seniorcare"
+          />
+          <ProjectCard
+            title="100PlusTools.com"
+            tagline="SEO‑optimized multi‑tool SaaS with subscriptions"
+            bullets={[
+              "Categories & dynamic routing",
+              "Ad + subscription monetization",
+              "Fast search & filtering",
+            ]}
+            tech={["Next.js", "Node", "Stripe", "SEO"]}
+            href="https://100plustools.vercel.app"
+          />
+        </div>
+      </Section>
+
+      <Section id="experience" title="Experience" eyebrow="Timeline">
+        <Timeline items={timeline} />
+      </Section>
+
+      <Section id="education" title="Education" eyebrow="Background">
+        <ul className="list-disc pl-6 text-neutral-700 space-y-2">
+          <li>Procore Machine Learning and Artificial Intelligence, Data in Construction Series, 2025</li>
+          <li>IBM Full Stack Software Developer Professional Certificate, 2024</li>
+          <li>Procore Admin Certification, 2024</li>
+          <li>British Columbia Institute of Technology, Software Systems Development (With Distinction), 2021 to 2023</li>
+          <li>British Columbia Institute of Technology, Introduction to Programming with Python, 2021</li>
+        </ul>
+      </Section>
+
+      <Section id="now" title="What I’m Building Now" eyebrow="Now">
+        <ul className="list-disc pl-6 text-neutral-700 space-y-2">
+          <li>ASTRYX automation engine and ML routing</li>
+          <li>IWCD CMS estimating and reporting improvements</li>
+          <li>Procedural hero graphic (L‑system)</li>
+          <li>RBAC and audit logging libraries</li>
+        </ul>
+      </Section>
+
+      {null}
+
+      <Section id="contact" title="Let’s work together" eyebrow="Contact">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="md:col-span-2">
+            <ContactForm />
+          </div>
+          <div className="space-y-4">
+            <Socials
+              links={[
+                { type: "github", href: process.env.NEXT_PUBLIC_GITHUB_URL || "" },
+                { type: "linkedin", href: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com/in/masonporter12" },
+                { type: "instagram", href: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "" },
+                { type: "email", href: `mailto:${process.env.NEXT_PUBLIC_EMAIL_TO || "mason@mpdevelopments.ca"}` },
+                { type: "site", href: process.env.NEXT_PUBLIC_SITE_URL || "https://mpdevelopments.ca" },
+              ]}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs/pages/getting-started?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <a
+              href="https://cal.com/masonbarry/"
+              className="block rounded-md border border-neutral-200 p-4 hover:bg-neutral-50"
+            >
+              Schedule a Call
+            </a>
+            <a
+              href="tel:+12507390870"
+              className="block rounded-md border border-neutral-200 p-4 hover:bg-neutral-50"
+            >
+              Call 250‑739‑0870
+            </a>
+            <a
+              href="/api/resume?inline=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-md border border-neutral-200 p-4 hover:bg-neutral-50"
+            >
+              View Résumé (PDF)
+            </a>
+            <a
+              href="mailto:mason@mpdevelopments.ca"
+              className="block rounded-md border border-neutral-200 p-4 hover:bg-neutral-50"
+            >
+              Email Me
+            </a>
+            <a
+              href="https://linkedin.com/in/masonporter12"
+              className="block rounded-md border border-neutral-200 p-4 hover:bg-neutral-50"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn Profile
+            </a>
+            <a
+              href="https://mpdevelopments.ca"
+              className="block rounded-md border border-neutral-200 p-4 hover:bg-neutral-50"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              mpdevelopments.ca
+            </a>
+          </div>
         </div>
-      </main>
-    </div>
+      </Section>
+      <MobileContactDock />
+    </Layout>
   );
 }
