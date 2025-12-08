@@ -38,3 +38,48 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+
+## Contact form email setup
+
+This project can send contact form emails via SMTP (e.g., SendGrid).
+
+1) Install dependencies (already added): `nodemailer`
+2) Configure environment variables (create `.env.local` in the `portfolio` folder):
+
+```
+# SMTP configuration (example: SendGrid)
+SMTP_HOST=smtp.sendgrid.net
+SMTP_PORT=587
+SMTP_USER=apikey
+SMTP_PASS=REPLACE_WITH_REAL_KEY
+
+# Delivery addresses
+CONTACT_TO=you@example.com
+# Optional "From" header (defaults to SMTP_USER)
+CONTACT_FROM="Portfolio Contact" <no-reply@example.com>
+```
+
+3) Restart `npm run dev` after adding `.env.local`.
+
+The API route at `pages/api/contact.js` will validate inputs, block simple spam via a honeypot, and send the email. If SMTP is not configured, it will accept the message and log a note instead of failing, so the UI remains smooth during local development.
+
+### Use EmailJS instead of SMTP (no server creds)
+
+You can send directly from the browser using EmailJS. Add these to `.env.local`:
+
+```
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_xxxxx
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_xxxxx
+```
+
+Then configure your EmailJS template variables to match:
+- from_name, user_name, message
+
+When these env vars are present, the contact form will use EmailJS; otherwise it falls back to the SMTP API route.
+
+Troubleshooting EmailJS (HTTP 412 or “Extension context invalidated”):
+- Ensure your public key, service ID, and template ID are correct.
+- In EmailJS dashboard, add your site origin to Allowed Origins (e.g., http://localhost:3000, and your production domain).
+- Make sure your template variables match what the form sends: from_name, user_name, message.
+- If EmailJS fails for any reason, the form now automatically falls back to the SMTP route.
