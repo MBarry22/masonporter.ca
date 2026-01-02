@@ -66,7 +66,7 @@ export default function Home() {
         <div className="prose max-w-none">
           <p>
             I am Mason Barry, also known as Mason Porter. I am a full stack
-            developer and IT systems specialist based in Nanaimo, BC. I designed
+            developer and IT systems specialist based in Calgary, AB. I designed
             and built the Construction Management System used across a one
             hundred million dollar construction company, and I have launched two
             software platforms of my own. I work with Next.js, Node.js,
@@ -119,7 +119,7 @@ export default function Home() {
             tagline="Custom enterprise platform — roles, SCOs, estimating, Procore"
             bullets={[
               "Replaced $200k+ software need",
-              "~100k+ LOC across multiple modules",
+              "100k+ LOC across multiple modules",
               "Azure AD SSO, RBAC",
             ]}
             tech={["Next.js", "Node", "MySQL", "Azure AD", "Procore"]}
@@ -148,7 +148,7 @@ export default function Home() {
             href="https://mp-ai-auto-browser.vercel.app/"
           />
           <ProjectCard
-            title="100PlusTools.com"
+            title="favotools.com"
             tagline="SEO‑optimized multi‑tool SaaS with subscriptions"
             bullets={[
               "Categories & dynamic routing",
@@ -156,7 +156,7 @@ export default function Home() {
               "Fast search & filtering",
             ]}
             tech={["Next.js", "Node", "Stripe", "SEO"]}
-            href="https://100plustools.vercel.app"
+            href="https://favotools.com"
           />
         </div>
       </Section>

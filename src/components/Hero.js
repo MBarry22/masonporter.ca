@@ -13,7 +13,7 @@ export default function Hero() {
       <LSystemCanvas />
       <div className="mx-auto max-w-3xl text-center">
         <p className="text-sm font-medium text-brand-700">
-          Mason Barry (aka Mason Porter) · Nanaimo, BC
+          Mason Barry (aka Mason Porter) · Calgary, AB
         </p>
         <h1 className="mt-3 text-3xl sm:text-5xl font-semibold tracking-tight">
           Building production systems that streamline operations and scale
