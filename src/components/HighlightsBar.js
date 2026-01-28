@@ -2,10 +2,10 @@ import React from "react";
 
 export default function HighlightsBar() {
   const items = [
-    { label: "Experience", value: "4+ years" },
+    { label: "Experience", value: "5+ years" },
     { label: "Enterprise impact", value: "$100M+ CMS footprint" },
     { label: "Communities", value: "500k players • 17k members" },
-    { label: "Location", value: "Nanaimo, BC" },
+    { label: "Location", value: "Calgary, AB" },
   ];
   return (
     <div className="mx-auto mt-4 max-w-4xl">

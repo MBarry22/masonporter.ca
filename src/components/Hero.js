@@ -59,7 +59,7 @@ export default function Hero() {
           />
         </div>
         <p className="mt-4 text-xs text-neutral-500">
-          4+ yrs building production systems · 100k+ LOC enterprise platform ·
+          5+ yrs building production systems · 100k+ LOC enterprise platform ·
           Procore, Stripe, Azure AD
         </p>
       </div>

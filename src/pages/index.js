@@ -14,19 +14,27 @@ export default function Home() {
       title: "Founder at MP Developments",
       period: "2024 to Present",
       points: [
-        "ASTRYX: ITSM platform with tickets, custom forms, assets, roles, and team workflows.",
+        "astryx.ca: ITSM platform with tickets, custom forms, assets, roles, and team workflows.",
         "Stripe subscriptions, Auth0 login, multi tenant MySQL, automated inbound and outbound email.",
-        "100PlusTools: SEO multi tool SaaS with usage limits, billing, email sending, and admin analytics.",
+        "favotools.com: SEO multi tool SaaS with usage limits, billing, email sending, and admin analytics.",
       ],
     },
     {
-      title: "Technology Specialist and Lead Developer at Island Westcoast Developments LTD",
-      period: "2022 to Present",
+      title: "Lead Developer at Island Westcoast Developments LTD",
+      period: "December 2022 to Present",
       points: [
         "Built internal Construction Management System used by 125+ employees; supports $100M+ annual project volume.",
         "Modules: change orders, subcontractor management, estimates, and approvals. Result: reduced processing from hours to minutes.",
         "Internal apps: email automation, financial calculations, reporting, leadership dashboards.",
         "Managed identity, authentication, cloud services, integrations, and infrastructure across two offices.",
+      ],
+    },
+    {
+      title: "Software Developer at Flavrite",
+      period: "September 2022 to May 2023",
+      points: [
+        "Migrated mobile app from React Native CLI to Expo.",
+        "Improved camera system and image search functions.",
       ],
     },
     {
@@ -46,14 +54,6 @@ export default function Home() {
         "Integrated bots and services; supported events and moderation workflows.",
         "Served a user base of 500k+ players over the network’s lifespan.",
         "Led operations for community servers and staff coordination; policy and partner/vendor liaison.",
-      ],
-    },
-    {
-      title: "Software Developer at Flavrite",
-      period: "2022",
-      points: [
-        "Migrated mobile app from React Native CLI to Expo.",
-        "Improved camera system and image search functions.",
       ],
     },
   ];
@@ -78,7 +78,7 @@ export default function Home() {
             <li>Technology Specialist and Lead Developer at Island Westcoast Developments (2022 to Present)</li>
             <li>Creator of ASTRYX (ITSM) and 100PlusTools (multi tool SaaS)</li>
             <li>Hands on with identity, cloud services, integrations, and infrastructure</li>
-            <li>More than four years building production systems at enterprise scale</li>
+            <li>More than five years building production systems at enterprise scale</li>
           </ul>
         </div>
       </Section>
