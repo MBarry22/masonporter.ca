@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import { BentoGrid, BentoCard } from "@/components/BentoGrid";
 import ProjectCard from "@/components/ProjectCard";
+import { getFeaturedForHome } from "@/data/projects";
 import Timeline from "@/components/Timeline";
 import ContactForm from "@/components/ContactForm";
 import Socials from "@/components/Socials";
@@ -113,51 +114,22 @@ export default function Home() {
       </Section>
 
       <Section id="projects" title="Featured Projects" eyebrow="Work">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <ProjectCard
-            title="IWCD Construction Management System"
-            tagline="Custom enterprise platform — roles, SCOs, estimating, Procore"
-            bullets={[
-              "Replaced $200k+ software need",
-              "100k+ LOC across multiple modules",
-              "Azure AD SSO, RBAC",
-            ]}
-            tech={["Next.js", "Node", "MySQL", "Azure AD", "Procore"]}
-            href="https://iwcdcoms.ca"
-          />
-          <ProjectCard
-            title="ASTRYX (ITSM & Asset Management)"
-            tagline="Multi‑tenant SaaS with dynamic forms and ML routing"
-            bullets={[
-              "RBAC, Teams, Subscriptions",
-              "Stripe billing portal",
-              "Inventory + asset assignment",
-            ]}
-            tech={["Next.js", "Node", "Postgres", "Stripe", "Auth0"]}
-            href="https://astryx.ca"
-          />
-          <ProjectCard
-            title="Flowwright AI Browser Automation Assistant"
-            tagline="Natural‑language browser automation using AI + Playwright"
-            bullets={[
-              "AI interprets instructions and generates an execution plan",
-              "Automates navigation, clicks, waits, and extraction with Playwright",
-              "Next.js APIs with orchestration and result logs; demo runs plan generation",
-            ]}
-            tech={["Next.js", "Node", "TypeScript", "Playwright", "LLM"]}
-            href="https://mp-ai-auto-browser.vercel.app/"
-          />
-          <ProjectCard
-            title="favotools.com"
-            tagline="SEO‑optimized multi‑tool SaaS with subscriptions"
-            bullets={[
-              "Categories & dynamic routing",
-              "Ad + subscription monetization",
-              "Fast search & filtering",
-            ]}
-            tech={["Next.js", "Node", "Stripe", "SEO"]}
-            href="https://favotools.com"
-          />
+        <div className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-2">
+          {getFeaturedForHome().map((p) => (
+            <ProjectCard
+              key={p.id}
+              title={p.title}
+              tagline={p.subtitle}
+              bullets={p.bullets}
+              tech={p.tags}
+              href={p.href}
+              primaryLabel={p.primaryLabel}
+              secondaryHref={p.secondaryHref}
+              secondaryLabel={p.secondaryLabel}
+              badge={p.badge}
+              featured={p.featured}
+            />
+          ))}
         </div>
       </Section>
 

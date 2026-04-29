@@ -16,7 +16,7 @@ function usePrefersReducedMotion() {
 // Tuned for subtle, low-contrast lines as a background accent.
 export default function LSystemCanvas({ className = "" }) {
   const canvasRef = useRef(null);
-  const reduced = typeof window !== "undefined" ? usePrefersReducedMotion() : true;
+  const reduced = usePrefersReducedMotion();
 
   useEffect(() => {
     if (reduced) return;
