@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
@@ -64,23 +65,59 @@ export default function Home() {
       <Hero />
 
       <Section id="about" title="About Me" eyebrow="Introduction">
-        <div className="prose max-w-none">
-          <p>
-            I am Mason Barry, also known as Mason Porter. I am a full stack
-            developer and IT systems specialist based in Calgary, AB. I designed
-            and built the Construction Management System used across a one
-            hundred million dollar construction company, and I have launched two
-            software platforms of my own. I work with Next.js, Node.js,
-            TypeScript, MySQL, and authentication and billing systems such as
-            Auth0 and Stripe. I focus on shipping clean, reliable systems that
-            help teams move faster and operate more efficiently.
-          </p>
-          <ul>
-            <li>Technology Specialist and Lead Developer at Island Westcoast Developments (2022 to Present)</li>
-            <li>Creator of ASTRYX (ITSM) and 100PlusTools (multi tool SaaS)</li>
-            <li>Hands on with identity, cloud services, integrations, and infrastructure</li>
-            <li>More than five years building production systems at enterprise scale</li>
+        <div className="max-w-3xl space-y-5 text-neutral-700">
+          <div className="space-y-4 text-[15px] leading-relaxed sm:text-base">
+            <p>
+              I’m Mason Barry, also known professionally as Mason Porter — a
+              full-stack developer and IT systems specialist based in Calgary,
+              Alberta.
+            </p>
+            <p>
+              I design and build production-ready software for businesses that
+              need reliable internal systems, SaaS platforms, automation tools,
+              and operational workflows. I built the Construction Management
+              System used across a $100M+ construction company, and I’ve launched
+              my own platforms including ASTRYX, an IT service management
+              system, and 100PlusTools, a multi-tool SaaS product. I also ship
+              portfolio-grade builds like Flowwright 2.0 and VaultLens to
+              explore automation architecture, document intelligence, and
+              permission-aware patterns.
+            </p>
+            <p>
+              My work combines Next.js, TypeScript, Node.js, databases,
+              authentication, billing, cloud services, and integrations to
+              create systems that are clean, scalable, and useful in real
+              business environments.
+            </p>
+            <p>
+              I’m especially interested in building tools that help teams move
+              faster, reduce manual work, and make better use of their data and
+              processes.
+            </p>
+          </div>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-neutral-700 sm:pl-6">
+            <li>Technology Specialist &amp; Lead Developer at Island Westcoast Developments</li>
+            <li>Built a custom Construction Management System for a $100M+ construction company</li>
+            <li>Creator of ASTRYX and 100PlusTools</li>
+            <li>Experienced with identity, permissions, billing, APIs, cloud services, and internal systems</li>
+            <li>Focused on SaaS platforms, automation tools, enterprise workflows, and practical business software</li>
           </ul>
+          <div className="flex flex-wrap gap-2 pt-1">
+            {[
+              "Internal Systems",
+              "SaaS Platforms",
+              "Automation Tools",
+              "IT Operations",
+              "Document Intelligence",
+            ].map((label) => (
+              <span
+                key={label}
+                className="rounded-full border border-neutral-200 bg-neutral-50 px-2.5 py-1 text-xs font-medium text-neutral-700"
+              >
+                {label}
+              </span>
+            ))}
+          </div>
         </div>
       </Section>
 
@@ -131,6 +168,14 @@ export default function Home() {
             />
           ))}
         </div>
+        <p className="mt-6 text-center text-sm text-neutral-600">
+          <Link
+            href="/projects"
+            className="font-medium text-brand-800 underline decoration-brand-200 underline-offset-2 hover:text-brand-900"
+          >
+            View all projects
+          </Link>
+        </p>
       </Section>
 
       <Section id="experience" title="Experience" eyebrow="Timeline">

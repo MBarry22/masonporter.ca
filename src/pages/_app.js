@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
         <title>Mason Porter — Full-Stack Developer | masonporter.ca</title>
         <meta
           name="description"
-          content="Full-stack developer and IT systems specialist in Calgary, AB. SaaS platforms, workflow automation, AI-assisted developer tools (Flowwright 2.0), and production business systems."
+          content="Full-stack developer and IT systems specialist in Calgary, AB. SaaS platforms, workflow automation, permission-aware document intelligence demos, developer tools, and production business systems."
         />
         <meta
           property="og:title"
@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
         />
         <meta
           property="og:description"
-          content="SaaS, workflow automation, AI-assisted tools, and enterprise systems. Recent work includes Flowwright 2.0, a controlled browser automation studio demo."
+          content="SaaS, workflow automation, document intelligence demos, and enterprise systems — including Flowwright 2.0 and VaultLens."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://masonporter.ca" />

@@ -1,9 +1,17 @@
 /**
- * Project catalog — use on the homepage and later on /projects.
- * homepageOrder: lower comes first in Featured Projects (max 4 on home).
+ * Project catalog — homepage (max 4) and /projects (full list).
+ * homeOrder: lower comes first among visibleOnHome projects.
  */
 
 const MAX_HOME = 4;
+
+const LIST_ORDER = [
+  "flowwright-2",
+  "vaultlens",
+  "astryx",
+  "iwcd-cms",
+  "favotools",
+];
 
 export const projects = [
   {
@@ -34,6 +42,33 @@ export const projects = [
     homeOrder: 0,
   },
   {
+    id: "vaultlens",
+    title: "VaultLens",
+    subtitle:
+      "Permission-aware document intelligence demo showing the trust layer behind enterprise AI/RAG systems.",
+    bullets: [
+      "Role-based answers across synthetic company documents",
+      "Citations, restricted-access handling, and audit logs",
+      "Evaluation dashboard for trust and permission behavior",
+    ],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "RAG Architecture",
+      "RBAC",
+      "Document Intelligence",
+    ],
+    href: "https://vaultlens.vercel.app/",
+    primaryLabel: "View Live Demo",
+    secondaryHref: "https://vaultlens.vercel.app/case-study",
+    secondaryLabel: "Read Case Study",
+    badge: "Featured",
+    featured: true,
+    category: ["Featured", "Developer Tools", "SaaS", "Business Systems"],
+    visibleOnHome: true,
+    homeOrder: 1,
+  },
+  {
     id: "astryx",
     title: "ASTRYX (ITSM & Asset Management)",
     subtitle: "Multi‑tenant SaaS with dynamic forms and ML routing",
@@ -47,7 +82,7 @@ export const projects = [
     primaryLabel: "View site",
     category: ["Featured", "SaaS", "Web Tools", "Business Systems"],
     visibleOnHome: true,
-    homeOrder: 1,
+    homeOrder: 2,
   },
   {
     id: "iwcd-cms",
@@ -63,7 +98,7 @@ export const projects = [
     primaryLabel: "View site",
     category: ["Featured", "Business Systems", "SaaS"],
     visibleOnHome: true,
-    homeOrder: 2,
+    homeOrder: 3,
   },
   {
     id: "favotools",
@@ -78,8 +113,8 @@ export const projects = [
     href: "https://favotools.com",
     primaryLabel: "View site",
     category: ["SaaS", "Web Tools", "Featured"],
-    visibleOnHome: true,
-    homeOrder: 3,
+    visibleOnHome: false,
+    homeOrder: 4,
   },
 ];
 
@@ -88,4 +123,10 @@ export function getFeaturedForHome() {
     .filter((p) => p.visibleOnHome)
     .sort((a, b) => a.homeOrder - b.homeOrder)
     .slice(0, MAX_HOME);
+}
+
+/** Full list for /projects — stable product order */
+export function getAllProjects() {
+  const idx = (id) => LIST_ORDER.indexOf(id);
+  return [...projects].sort((a, b) => idx(a.id) - idx(b.id));
 }

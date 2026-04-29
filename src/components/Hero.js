@@ -25,7 +25,7 @@ export default function Hero() {
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
-            href="#projects"
+            href="/#projects"
             className="inline-flex items-center rounded-md bg-brand-700 px-5 py-2.5 text-white shadow-sm hover:bg-brand-800 transition"
           >
             View Projects

@@ -9,12 +9,12 @@ export default function Layout({ children }) {
           <aside className="hidden lg:block lg:col-span-3 pt-10">
             <nav className="sticky top-8 space-y-2 text-sm">
               {[
-                ["About", "#about"],
-                ["Skills", "#skills"],
-                ["Projects", "#projects"],
-                ["Experience", "#experience"],
-                ["Now", "#now"],
-                ["Contact", "#contact"],
+                ["About", "/#about"],
+                ["Skills", "/#skills"],
+                ["Projects", "/#projects"],
+                ["Experience", "/#experience"],
+                ["Now", "/#now"],
+                ["Contact", "/#contact"],
               ].map(([label, href]) => (
                 <Link
                   key={href}
