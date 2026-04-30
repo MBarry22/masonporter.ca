@@ -19,6 +19,7 @@ const MAX_TAGS = 5;
 export default function ProjectCard({
   title,
   tagline,
+  summary,
   bullets = [],
   tech = [],
   href = "#",
@@ -26,6 +27,7 @@ export default function ProjectCard({
   secondaryHref,
   secondaryLabel = "Read Case Study",
   badge,
+  badges,
   featured,
 }) {
   const primaryExternal = isExternalUrl(href);
@@ -36,6 +38,8 @@ export default function ProjectCard({
   const displayBullets = bullets.slice(0, MAX_BULLETS);
   const displayTags = tech.slice(0, MAX_TAGS);
   const extraTagCount = Math.max(0, tech.length - MAX_TAGS);
+  const badgeList = Array.isArray(badges) ? badges.filter(Boolean) : [];
+  const showLegacyBadge = Boolean(badge) && badgeList.length === 0;
 
   return (
     <article
@@ -53,18 +57,38 @@ export default function ProjectCard({
           >
             {title}
           </h3>
-          {badge ? (
+          {showLegacyBadge ? (
             <span className="shrink-0 rounded-full border border-brand-200/90 bg-white/80 px-2 py-0.5 text-xs font-medium text-brand-800">
               {badge}
             </span>
           ) : null}
         </div>
+        {badgeList.length > 0 ? (
+          <div className="mt-2 flex max-w-full flex-wrap gap-1.5">
+            {badgeList.map((b) => (
+              <span
+                key={b}
+                className="shrink-0 rounded-full border border-brand-200/90 bg-white/90 px-2 py-0.5 text-[11px] font-semibold text-brand-900"
+              >
+                {b}
+              </span>
+            ))}
+          </div>
+        ) : null}
         <p
           className="mt-1.5 line-clamp-3 text-sm leading-relaxed text-neutral-600"
           title={tagline}
         >
           {tagline}
         </p>
+        {summary ? (
+          <p
+            className="mt-1.5 line-clamp-3 text-sm leading-snug text-neutral-700"
+            title={summary}
+          >
+            {summary}
+          </p>
+        ) : null}
         <ul className="mt-2.5 space-y-0.5 text-sm leading-tight text-neutral-700" aria-label="Project highlights">
           {displayBullets.map((b, i) => (
             <li key={i} className="flex min-w-0 gap-2">

@@ -14,15 +14,15 @@ export default function ProjectsPage() {
         <title>Projects — Mason Porter | masonporter.ca</title>
         <meta
           name="description"
-          content="Selected builds: SaaS platforms, workflow automation, permission-aware document intelligence (VaultLens), and production business systems."
+          content="Production systems, SaaS platforms, automation demos, document intelligence, and release-operations tooling — full catalog of selected work."
         />
       </Head>
 
       <div className="pt-8 sm:pt-10">
         <Section id="catalog" title="Projects" eyebrow="Work">
           <p className="mb-8 max-w-2xl text-sm leading-relaxed text-neutral-600">
-            A concise catalog of shipped and demo-grade work — full-stack apps, internal platforms,
-            and architecture-focused demos. Highlights also appear in the{" "}
+            A collection of production systems, SaaS platforms, automation demos, and internal-tool
+            architecture projects. Highlights also appear in the{" "}
             <Link
               href="/#projects"
               className="font-medium text-brand-800 underline decoration-brand-200 underline-offset-2 hover:text-brand-900"
@@ -37,6 +37,7 @@ export default function ProjectsPage() {
                 key={p.id}
                 title={p.title}
                 tagline={p.subtitle}
+                summary={p.summary}
                 bullets={p.bullets}
                 tech={p.tags}
                 href={p.href}
@@ -44,6 +45,7 @@ export default function ProjectsPage() {
                 secondaryHref={p.secondaryHref}
                 secondaryLabel={p.secondaryLabel}
                 badge={p.badge}
+                badges={p.badges}
                 featured={p.featured}
               />
             ))}

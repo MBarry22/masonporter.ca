@@ -157,6 +157,7 @@ export default function Home() {
               key={p.id}
               title={p.title}
               tagline={p.subtitle}
+              summary={p.summary}
               bullets={p.bullets}
               tech={p.tags}
               href={p.href}
@@ -164,6 +165,7 @@ export default function Home() {
               secondaryHref={p.secondaryHref}
               secondaryLabel={p.secondaryLabel}
               badge={p.badge}
+              badges={p.badges}
               featured={p.featured}
             />
           ))}
@@ -194,6 +196,7 @@ export default function Home() {
 
       <Section id="now" title="What I’m Building Now" eyebrow="Now">
         <ul className="list-disc pl-6 text-neutral-700 space-y-2">
+          <li>ReleasePilot — release and incident control dashboard demo</li>
           <li>ASTRYX automation engine and ML routing</li>
           <li>IWCD CMS estimating and reporting improvements</li>
           <li>Procedural hero graphic (L‑system)</li>
